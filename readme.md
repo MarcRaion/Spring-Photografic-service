@@ -1,5 +1,4 @@
 Projekt wzorujący się na funkcjonalności Instagrama.
-Postęp projektu na gałęzi develop.
 
 Co zostało zrobione:
 Logowanie Spring Security (przykładowe dane login:JOHN_FIRST  hasło:123, login:ASH_GM hasło 123).
