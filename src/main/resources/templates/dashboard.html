@@ -1,0 +1,99 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>Welcome to Stylist</title>
+
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dashboard.css}"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>-->
+
+    <link rel="stylesheet" href="css/fontello.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=latin-ext" rel="stylesheet">
+
+
+    <!--<script type="text/javascript">-->
+        <!--document.getElementById("heart").addEventListener("click", function() {-->
+            <!--document.getElementById("heart").innerHTML = "Hello World";-->
+        <!--});-->
+
+    <!--</script>-->
+</head>
+<body>
+
+<header>
+
+
+    <div class="panel" >
+        <a th:href="@{/logout}">Logout</a>
+    </div>
+
+    <div id="title">Stylist</div>
+
+
+    <div class="panel">
+        <a th:href="@{/profile}">To Your profile</a>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+
+        <div id="posts" th:each="temp: ${posts}">
+
+            <div>
+                <a id="author" th:href="@{/contains/__${temp.getId()}__}"
+                   th:text="${temp.getAuthor()}"></a>
+            </div>
+
+            <div id="collection" >
+                <img id ="picture" alt="" th:src="'data:image/jpeg;base64,'+${temp.image}">
+            </div>
+
+            <div id="pictureDescription">
+                <i  id="heart" class="fa fa-heart"></i>
+                    <div id="description" th:text="${temp.getDescription()}"></div>
+                <div id="date" th:text="${temp.getAddingDate()}"></div>
+            </div>
+
+            <div id="comments" th:each="comment: ${temp.getUserComments()}">
+                <p th:text="${comment.getUsers().username + ':'}"></p>
+                <p th:text="${comment.getText()}"></p>
+            </div>
+
+
+            <div>
+            <form id="commentForm" th:action="@{/addComment/__${temp.getId()}__}" th:object="${comment}" method="POST">
+
+
+                <div id="typeComment">
+                    <input type="text" placeholder="Add Comment..." th:field="*{text}"  />
+                </div>
+                <div>
+                    <button id="commentButton" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </form>
+            </div>
+
+            <div id="delete" th:if="(${#authentication.name}==${temp.getAuthor()}) OR ${#request.isUserInRole('ROLE_ADMIN')}">
+                <a th:href="@{delete/__${temp.getId()}__}" class="btn btn-danger">Delete</a>
+            </div>
+
+        </div>
+    </div>
+
+
+</main>
+
+<!--<script src="../static/js/jquery.js"></script>-->
+<!--<script src="../static/js/operations.js" charset="utf-8"></script>-->
+
+</body>
+
+
+</html>

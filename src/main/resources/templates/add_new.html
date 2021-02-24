@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>Adding Post</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/adding_post.css}"/>
+
+    <link rel="stylesheet" href="css/fontello.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+</head>
+
+<body>
+
+    <div>
+        <h3>Add Post</h3>
+    </div>
+
+    <form th:action="@{/addingPost}" th:object="${post}" method="POST"
+            enctype="multipart/form-data">
+
+        <div>
+            <input type="file" name="file" placeholder="Image" >
+        </div>
+
+        <div>
+            <input type="text" th:field="*{title}" placeholder="Title">
+        </div>
+
+        <div>
+            <input type="text" th:field="*{description}" placeholder="Description">
+        </div>
+
+
+        <!-- Register Button -->
+        <div class="col-sm-6 controls">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+
+    </form>
+
+
+</body>
+
+</html>

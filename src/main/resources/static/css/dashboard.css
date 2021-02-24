@@ -1,0 +1,169 @@
+body
+{
+
+    margin: 0;
+    font-family: 'Lobster', sans-serif;
+    font-size: 17px;
+    background: #26282E url("../img/background.jpg")no-repeat center fixed;
+    background-size:cover;
+}
+
+header
+{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    border-bottom-style: solid;
+
+}
+
+#title{
+    font-size: 35px;
+    letter-spacing: 3px;
+    color:#db7093;
+}
+
+.panel{
+    text-align: center;
+    vertical-align: middle;
+    width: 200px;
+}
+
+
+
+a{
+  color: #db7093;
+
+}
+a:link{
+    font-size: 25px;
+    text-decoration: none !important;
+}
+a:link:hover{
+    filter:brightness(50%);
+}
+
+
+main
+{
+    width:100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#posts{
+    width: 500px;
+    border-style: solid;
+    margin-top:40px;
+    margin-bottom: 10px;
+}
+
+#collection{
+    background-size: cover;
+    width: 100%;
+}
+
+#author{
+    font-size:20px;
+    letter-spacing: 3px;
+    color: #db7093;
+}
+
+#picture{
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+
+
+
+#comments{
+    display: flex;
+    justify-content: start;
+    margin-top:-15px;
+
+
+}
+
+
+#commentForm{
+    padding-top: 20px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+
+    display: flex;
+    justify-content: start;
+    height: 45px;
+}
+
+
+
+input[type="text"]
+{
+    margin: 0;
+    height: 30px;
+    background: transparent;
+    border: none;
+    width: 450px;
+}
+#commentButton{
+
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 20px;
+
+}
+
+
+p {
+    display: inline-block;
+    padding-right: 20px;
+    height: 20px;
+}
+
+#delete a{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color:red;
+}
+
+
+#pictureDescription{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+#heart{
+    font-size: 25px;
+    cursor: pointer;
+}
+#red{
+    color: red;
+    font-size: 25px;
+    cursor: pointer;
+}
+#date{
+    text-align: center;
+    vertical-align: middle;
+}
+#description{
+    color:black;
+}

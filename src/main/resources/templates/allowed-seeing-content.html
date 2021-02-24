@@ -1,0 +1,59 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Your profile page</title>
+
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/profiles.css}"/>
+
+</head>
+
+<body>
+
+<header>
+    <div class="header">
+
+        <div class="img">
+            Zdjecie
+        </div>
+
+        <div class="user" th:text="${post.getAuthor()}">
+        </div>
+
+        <div class="posts">
+            Liczba postow:
+            <span  th:text="${count}"></span>
+        </div>
+
+    </div>
+</header>
+
+<main>
+
+    <div class="content">
+        <div class="list" th:each="temp : ${list}">
+            <div class="collection">
+                <img class="hair" alt="" th:src="'data:image/jpeg;base64,'+${temp.image}">
+
+
+                <div th:text="${temp.getDescription()}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <div>
+        <a th:href="@{/dashboard}">MAin page</a>
+    </div>
+</footer>
+
+</body>
+
+
+</html>

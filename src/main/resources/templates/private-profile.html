@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Your profile page</title>
+
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/profiles.css}"/>
+
+</head>
+
+<body>
+
+<p style="color: white" >You have to follow the user to see content</p>
+
+    <div>
+        <a th:href="@{follow/__${author}__}" class="button">Follow user</a>
+
+    </div>
+</form>
+
+</body>
+
+
+</html>

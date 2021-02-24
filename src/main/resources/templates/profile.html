@@ -1,0 +1,64 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Your profile page</title>
+
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/profiles.css}"/>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+            <div class="img">
+                Profilowe
+            </div>
+
+            <div class="user" th:text="${user}">
+            </div>
+
+            <div class="posts">
+                Liczba postow:
+                <span th:text="${count}"></span>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <div class="addButton">
+            <a th:href="@{/showFormForAdd}">Add new Post</a>
+        </div>
+
+        <div class="content">
+
+            <div th:each="temp : ${posts}">
+
+                <div class="collection" >
+                    <img class="hair" alt="" th:src="'data:image/jpeg;base64,'+${temp.image}">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class = "foot">
+            <a th:href="@{/dashboard}">Main page</a>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>

@@ -1,0 +1,9 @@
+CREATE OR REPLACE TRIGGER add_role
+AFTER INSERT ON USERS
+FOR EACH ROW
+BEGIN
+INSERT INTO USER_ROLE (USERS_ID, ROLES_ID)
+VALUES (:new.USER_ID, 2);
+END add_role;
+
+alter table post add image varchar(64);
