@@ -152,14 +152,11 @@ p {
 }
 
 #heart{
+    color: black;
     font-size: 25px;
     cursor: pointer;
 }
-#red{
-    color: red;
-    font-size: 25px;
-    cursor: pointer;
-}
+
 #date{
     text-align: center;
     vertical-align: middle;

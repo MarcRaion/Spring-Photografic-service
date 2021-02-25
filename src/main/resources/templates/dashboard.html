@@ -9,19 +9,18 @@
 
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/dashboard.css}"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />-->
     <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+
 
     <link rel="stylesheet" href="css/fontello.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=latin-ext" rel="stylesheet">
 
 
-    <!--<script type="text/javascript">-->
-        <!--document.getElementById("heart").addEventListener("click", function() {-->
-            <!--document.getElementById("heart").innerHTML = "Hello World";-->
-        <!--});-->
 
-    <!--</script>-->
 </head>
 <body>
 
@@ -55,7 +54,8 @@
             </div>
 
             <div id="pictureDescription">
-                <i  id="heart" class="fa fa-heart"></i>
+                <i id="heart" class="far fa-heart"></i>
+                <!--<i  id="heart" class="fa fa-heart"></i>-->
                     <div id="description" th:text="${temp.getDescription()}"></div>
                 <div id="date" th:text="${temp.getAddingDate()}"></div>
             </div>
@@ -90,8 +90,8 @@
 
 </main>
 
-<!--<script src="../static/js/jquery.js"></script>-->
-<!--<script src="../static/js/operations.js" charset="utf-8"></script>-->
+<script th:src="@{/js/jQuery/jquery.js}"></script>
+<script th:src="@{/js/operations.js}" charset="utf-8"></script>
 
 </body>
 

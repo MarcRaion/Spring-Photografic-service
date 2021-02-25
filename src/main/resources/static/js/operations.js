@@ -1,12 +1,14 @@
+var post = document.querySelectorAll("#posts");
 
-$(document).ready(function (){
+post.forEach(function () {
     $('#heart').click(function () {
-        $('#heart').css('color','red');
+
+        $('#heart').toggleClass('fa fa heart');
+
+        $('#heart').toggleClass('far fa heart');
+        $('#heart').css('color', 'red');
+
 
     })
-})
 
-// function change(){
-//     $('#heart').css('color','red');
-//
-// }
+})
