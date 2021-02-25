@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-     - name: Deploy to Heroku
+    - name: Deploy to Heroku
  
       uses: AkhileshNS/heroku-deploy@v3.12.12
       with:
